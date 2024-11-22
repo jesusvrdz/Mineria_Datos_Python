@@ -1,7 +1,7 @@
 #Estadística descriptiva
+import csv
 import pandas as pd
 
-df = pd.read_csv("movies_clean.csv")
 
 #Análisis para observar la relación de la duración con el género
 def EstadisticasPorGeneroYDuracion():
@@ -14,7 +14,7 @@ def EstadisticasPorGeneroYDuracion():
     resultado.columns = ['Total_Peliculas', 'Duracion_Promedio', 'Duracion_Minima', 'Duracion_Maxima', 'Desviacion_Estandar', 'Varianza']
     
     #print(resultado)
-    resultado.to_csv('Tablas_pract_2/Dataset_Genero_Duracion.csv')
+    resultado.to_csv('Tablas_pract_2/DataSet_Genero_Duracion.csv')
 
 
 #Análisis para observar la relación de la duración promedio por país
@@ -24,7 +24,7 @@ def EstadisticasPorPaisYDuracion():
     resultado.columns = ['Duracion_Promedio', 'Duracion_Minima', 'Duracion_Maxima', 'Desviacion_Estandar', 'Varianza']
     
     #print(resultado) 
-    resultado.to_csv('Tablas_pract_2/Dataset_Pais_Duracion.csv')
+    resultado.to_csv('Tablas_pract_2/DataSet_Pais_Duracion.csv')
 
 
 #Análisis para observar la estadisticas de los directores
@@ -34,7 +34,7 @@ def EstadisticasPorDirector():
     resultado.columns = ['Total_Peliculas', 'Duracion_Promedio', 'Duracion_Minima', 'Duracion_Maxima', 'Desviacion_Estandar', 'Varianza']
     
     #print(resultado)
-    resultado.to_csv('Tablas_pract_2/Dataset_Director_Peliculas_Duracion.csv')
+    resultado.to_csv('Tablas_pract_2/DataSet_Director_Peliculas_Duracion.csv')
 
 
 #Análisis para observar cuantas peliculas se agregan por mes
@@ -52,8 +52,9 @@ def EstadisticasPorFechaAgregada():
     resultado['Varianza'] = resultado['Total_Peliculas'].var()
 
     #print(resultado)
-    resultado.to_csv('Tablas_pract_2/Dataset_Peliculas_Agregadas_Por_Mes.csv')
+    resultado.to_csv('Tablas_pract_2/DataSet_Peliculas_Agregadas_Por_Mes.csv')
 
+df = pd.read_csv("movies_clean.csv")
 
 EstadisticasPorGeneroYDuracion()
 EstadisticasPorPaisYDuracion()
